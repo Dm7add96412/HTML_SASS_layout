@@ -16,4 +16,4 @@ Used images as backgrounds and a zoom in hovering effect when touched.
 
 ## Deployment
 
-[Here's](https://preview.themeforest.net/item/maido-multipurpose-ghost-blog-theme/full_screen_preview/24837109?_ga=2.259990478.570486835.1654146705-2133876429.1654146705) the deployed site.
+[Here's](https://sassresponsivesite.netlify.app/) the deployed site.
