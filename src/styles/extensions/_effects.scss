@@ -1,0 +1,21 @@
+@mixin nav-hover-effect($navbar-color) {
+    color: $navbar-color;
+    &:hover {
+        color: darken($navbar-color, 50);
+    }
+    transition: color 0.5s ease;
+}
+
+@mixin pinned-hover-effect() {
+    &:hover {
+        transform: translateY(-0.2cm);
+    }
+    transition: height 2s, transform 0.3s;
+}
+
+@mixin articles-hover-effect() {
+    &:hover {
+        transform: scale(1.1);
+    }
+    transition: transform 0.5s;
+}
