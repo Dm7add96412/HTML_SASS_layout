@@ -48,8 +48,8 @@ main {
 .pinned {
     width: 90%;
     max-width: 1500px;
-    height: 25%;
-    height: 90%;
+    height: 25rem;
+    min-height: 25rem;
     list-style: none;
     display: grid;
     row-gap: 1rem;
