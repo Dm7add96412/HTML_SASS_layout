@@ -11,7 +11,6 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 2.5rem 2rem;
-
 }
 
 nav h1 {
@@ -28,6 +27,7 @@ nav a {
     @include effects.nav-hover-effect(colors.$nav-color);
     text-decoration: none;
 } 
+
 
 nav ul {
     display: flex;
