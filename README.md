@@ -1,19 +1,19 @@
-# Responsive design
+# Responsive design - task 2 for Integrify
 
-Refer to this [link](https://preview.themeforest.net/item/maido-multipurpose-ghost-blog-theme/full_screen_preview/24837109?_ga=2.259990478.570486835.1654146705-2133876429.1654146705)(see 'Dark version') and create a similar webpage
+Trying to replicate the layout or design of [this page](https://preview.themeforest.net/item/maido-multipurpose-ghost-blog-theme/full_screen_preview/24837109?_ga=2.259990478.570486835.1654146705-2133876429.1654146705)(see 'Dark version')
 
-## Requirements
+## Navigation bar
 
-1. Position the HTML elements using Flexbox and Grid system
-2. Implement basic animations as shown in the webpage (hover effect,
-active link styles, typing effect). You can modify the outlook of the effects
-3. Deploy your web page, using the platform of your choice (For example, Github Pages).
-4. This assignment requires the implementation of SASS.
-5. Rewrite README file with good structure. Add unnecessary files and folders to `.gitignore`
+Darkening hover animation and just simple white font.
 
-This assignment only requires 1 static page. No JavaScript needed.
-Font family and text content can be modified as your preferences.
-The web page does not need to be fully responsive, but at least you should
-have responsive scaling for Flexbox and Grid system.
+## Pinned cards
 
+Used images as backgrounds in these elements, with a hovering effect of slightly tilting the images up when touched.
 
+## Article cards
+
+Used images as backgrounds and a zoom in hovering effect when touched.
+
+## Deployment
+
+[Here's](https://preview.themeforest.net/item/maido-multipurpose-ghost-blog-theme/full_screen_preview/24837109?_ga=2.259990478.570486835.1654146705-2133876429.1654146705) the deployed site.
