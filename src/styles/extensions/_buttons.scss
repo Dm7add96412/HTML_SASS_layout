@@ -1,0 +1,9 @@
+@use "../variables/colors";
+
+.light-button {
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    background-color: colors.$text-light-color;
+    width: 75px;
+}

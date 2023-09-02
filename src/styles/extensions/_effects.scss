@@ -1,9 +1,25 @@
-@mixin nav-hover-effect($navbar-color) {
-    color: $navbar-color;
-    &:hover {
-        color: darken($navbar-color, 50);
+@mixin nav-hover-effect($light-color, $orange-color) {
+    &:hover::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5px;
+        height: 5px;
+        background-color: $light-color;
+        border-radius: 50%;
     }
-    transition: color 0.5s ease;
+    &:active::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    background-color: $orange-color;
+    border-radius: 50%;
+    }
+    
 }
 
 @mixin pinned-hover-effect() {

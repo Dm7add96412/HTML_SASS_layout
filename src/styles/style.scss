@@ -1,5 +1,6 @@
 @use "./variables/colors";
 @use "./extensions/effects";
+@use "./extensions/buttons";
 
 body {
     background-color: colors.$main-color;
@@ -7,33 +8,43 @@ body {
     padding: 0; 
 }
 
-nav {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 2.5rem 2rem;
-}
-
-nav h1 {
-    color: colors.$nav-color;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    margin: 0;
-    padding: 0;
-    font-size: 2.5rem;
-}
-
-nav a {
-    @include effects.nav-hover-effect(colors.$nav-color);
-    text-decoration: none;
-} 
-
-
-nav ul {
+header {
     display: flex;
-    list-style: none;
-    color:colors.$nav-color;
-    column-gap: 0.8rem;
+    justify-content: space-around;
+    padding: 2.5rem 2rem;
+
+    img {
+        width: 135px
+    }
+    nav ul {
+        display: flex;
+        list-style: none;
+        column-gap: 0.8rem;
+        & li {
+            position: relative;
+            padding: 10px;
+            &:hover::after {
+                z-index: 1;
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 5px;
+                height: 5px;
+                color: colors.$text-light-color;
+                border-radius: 50%;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        color: colors.$text-light-color;
+        font-size: 15px;
+        @include effects.nav-hover-effect(colors.$text-light-color, colors.$orange-color);
+    }
+    .fa-search {
+        color: colors.$text-light-color;
+    }
 }
 
 main {
@@ -54,49 +65,57 @@ main {
     display: grid;
     row-gap: 1rem;
     column-gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
-    "a b c"
-    "a d e";
-}
+    "a a b c"
+    "a a d e";
 
-.pinned a{
-    border-radius: 25px;
-    text-decoration: none;
-    transition: height 1s, transform 0.5s;
-    @include effects.pinned-hover-effect();
-}
+    article{
+        border-radius: 25px;
+        padding: 1rem;
+        text-decoration: none;
+        transition: height 1s, transform 0.5s;
+        @include effects.pinned-hover-effect();
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .pinned-card-text {
 
-.pinned a:nth-child(1) {
-    grid-area: a;
-    background-image: url('./styles/images/chairs.jpg');
-    background-size: cover;
-    background-position: center;
-}
-.pinned a:nth-child(2) {
-    grid-area: b;
-    background-image: url('./styles/images/desk.jpg');
-    background-size: cover;
-    background-position: center;
-}
-.pinned a:nth-child(3) {
-    grid-area: c;
-    background-image: url('./styles/images/moreplants.jpeg');
-    background-size: cover;
-    background-position: center;
-}
-.pinned a:nth-child(4) {
-    grid-area: d;
-    background-image: url('./styles/images/phonebooth.jpg');
-    background-size: cover;
-    background-position: center;
-}
-.pinned a:nth-child(5) {
-    grid-area: e;
-    background-image: url('./styles/images/pool.jpeg');
-    background-size: cover;
-    background-position: center;
+ 
+        }
+    }
+    
+    article:nth-child(1) {
+        grid-area: a;
+        background-image: url('./styles/images/chairs.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    article:nth-child(2) {
+        grid-area: b;
+        background-image: url('./styles/images/desk.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    article:nth-child(3) {
+        grid-area: c;
+        background-image: url('./styles/images/moreplants.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+    article:nth-child(4) {
+        grid-area: d;
+        background-image: url('./styles/images/phonebooth.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    article:nth-child(5) {
+        grid-area: e;
+        background-image: url('./styles/images/pool.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 .articles {
@@ -105,6 +124,8 @@ main {
     row-gap: 1rem;
     width: 90%;
     max-width: 1500px;
+
+    min-height: 60rem;
     align-items: center;
 }
 
