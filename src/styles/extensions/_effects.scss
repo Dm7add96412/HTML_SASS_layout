@@ -31,7 +31,6 @@
 
 @mixin articles-hover-effect() {
     &:hover {
-        transform: scale(1.1);
+        background-size: 110%;
     }
-    transition: transform 0.5s;
 }

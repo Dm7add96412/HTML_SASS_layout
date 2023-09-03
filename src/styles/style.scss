@@ -53,14 +53,14 @@ main {
     justify-content: start;
     align-items: center;
     row-gap: 1rem;
-    height: 100vh;
+
 }
 
 .pinned {
     width: 90%;
     max-width: 1500px;
-    height: 25rem;
-    min-height: 25rem;
+    height: 30rem;
+    min-height: 30rem;
     list-style: none;
     display: grid;
     row-gap: 1rem;
@@ -71,48 +71,45 @@ main {
     "a a b c"
     "a a d e";
 
-    article{
+    .pinned-link{
         border-radius: 25px;
         padding: 1rem;
         text-decoration: none;
+        color: colors.$text-light-color;
         transition: height 1s, transform 0.5s;
         @include effects.pinned-hover-effect();
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        .pinned-card-text {
-
- 
-        }
     }
     
-    article:nth-child(1) {
+    .pinned-link:nth-child(1) {
         grid-area: a;
-        background-image: url('./styles/images/chairs.jpg');
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./styles/images/chairs.jpg');
         background-size: cover;
         background-position: center;
     }
-    article:nth-child(2) {
+    .pinned-link:nth-child(2) {
         grid-area: b;
-        background-image: url('./styles/images/desk.jpg');
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./styles/images/desk.jpg');
         background-size: cover;
         background-position: center;
     }
-    article:nth-child(3) {
+    .pinned-link:nth-child(3) {
         grid-area: c;
-        background-image: url('./styles/images/moreplants.jpeg');
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./styles/images/moreplants.jpeg');
         background-size: cover;
         background-position: center;
     }
-    article:nth-child(4) {
+    .pinned-link:nth-child(4) {
         grid-area: d;
-        background-image: url('./styles/images/phonebooth.jpg');
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./styles/images/phonebooth.jpg');
         background-size: cover;
         background-position: center;
     }
-    article:nth-child(5) {
+    .pinned-link:nth-child(5) {
         grid-area: e;
-        background-image: url('./styles/images/pool.jpeg');
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./styles/images/pool.jpeg');
         background-size: cover;
         background-position: center;
     }
@@ -121,41 +118,65 @@ main {
 .articles {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 1.5rem;
     width: 90%;
     max-width: 1500px;
 
-    min-height: 60rem;
     align-items: center;
 }
 
-.articles a {
-    padding: 2rem 3rem;
+.articles-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 5rem;
     border-radius: 25px;
-    height: 15rem;
+    height: 30rem;
+    min-height: 30rem;
+    width: 65rem;
     max-width: 80%;
-    width: 100%;
-    flex-grow: 1;
+    flex-grow: 0;
     text-decoration: none;
-    transition: transform 0.5s;
+    color: colors.$text-light-color;
+    transition: background-size 1s ease;
+    @include effects.articles-hover-effect();
+
+}
+
+.articles-card-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.articles-card:nth-child(1) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./styles/images/computer.jpg');
+    background-size: 100%;
+    background-position: center;
+    @include effects.articles-hover-effect();
+}
+.articles-card:nth-child(2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./styles/images/chair.jpg');
+    background-size: 100%;
+    background-position: center;
+    @include effects.articles-hover-effect();
+}
+.articles-card:nth-child(3) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./styles/images/basketball.jpeg');
+    background-size: 100%;
+    background-position: center;
     @include effects.articles-hover-effect();
 }
 
-.articles a:nth-child(1) {
-    background-image: url('./styles/images/computer.jpg');
-    background-size: cover;
-    background-position: center;
+.loadmore {
+    display: flex;
+    flex-direction: column;
+    width: 70rem;
+    max-width: 80%;
+    padding: 0 3em;
+    justify-content: center;
+    align-items: center;
 }
-.articles a:nth-child(2) {
-    background-image: url('./styles/images/chair.jpg');
-    background-size: cover;
-    background-position: center;
-}
-.articles a:nth-child(3) {
-    background-image: url('./styles/images/basketball.jpeg');
-    background-size: cover;
-    background-position: center;
-}
+
 
 @media screen and (max-width: 800px) {
     .pinned {
@@ -163,10 +184,10 @@ main {
     }
     .articles {
         width: 80%; 
-        max-width: none; 
+        // max-width: none; 
     }
-    .block {
-        max-width: 100%;
-    }
+    // .articles-card {
+    //     max-width: 90%;
+    // }
 }
 
